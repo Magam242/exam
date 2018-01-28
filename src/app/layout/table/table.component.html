@@ -1,0 +1,19 @@
+<table border="1">
+    <tr>
+      <th>Прізвище та ім'я людини</th>
+      <th>Адреса</th>
+      <th>Телефон</th>
+      <th>Електронна пошта</th>
+      <th>
+        <label for="">Дозволити редагування</label>
+        <input type="checkbox" [checked]="activ" (change)="filter()">
+      </th>
+    </tr>
+    <tr *ngFor="let c of contacts">
+      <td>{{ c.fullname }}</td>
+      <td>{{ c.address }}</td>
+      <td>{{ c.tel }}</td>
+      <td>{{ c.email }}</td>
+      <button *ngIf="activ">Редагувати</button>
+    </tr>
+  </table>
